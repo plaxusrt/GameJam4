@@ -51,7 +51,7 @@ tex = background_get_texture(b_spacefield);
             <kind>1</kind>
             <string>//Skybox
 draw_set_colour(c_white);
-d3d_draw_ellipsoid(-10000,-10000,-10000,10000,10000,10000,tex,1,1,48);
+d3d_draw_ellipsoid(-100,-100,-100,100,100,100,tex,1,1,48);
 </string>
           </argument>
         </arguments>

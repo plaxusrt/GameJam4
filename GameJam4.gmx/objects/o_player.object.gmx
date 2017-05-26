@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir=0;
+            <string>//you
+dir=0;
 zdir=0;
+//vehicle
+vdir = 0;
+vzdir = 0;
 z=0;
 friction = 0.7;
 aspect = display_get_width()/display_get_height();
@@ -52,22 +56,31 @@ aspect = display_get_width()/display_get_height();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir -= (display_mouse_get_x() - (window_get_x()+window_get_width()*.5))*.12;
+            <string>//I will try to make the ships seem more realistic
+//My plan is to make them turn faster if the player has stopped and turn slower if the player is moving fast.
+//I will also make the ship show a crosshair, so we know where the ship is exactly aiming at.
+dir -= (display_mouse_get_x() - (window_get_x()+window_get_width()*.5))*.12;
 zdir += (display_mouse_get_y() - (window_get_y()+window_get_height()*.5))*.12;
 display_mouse_set(window_get_x()+window_get_width()*.5,window_get_y()+window_get_height()*.5);
 
-motion_add(dir,(keyboard_check(ord('W'))));
-motion_add(dir+90,(keyboard_check(ord('A'))));
-motion_add(dir-90,(keyboard_check(ord('D'))));
-motion_add(dir-180,(keyboard_check(ord('S'))));
-if speed &gt; 10 speed = 10;
+dir = dir % 360;
+
+vdir += sign(angle_difference(dir,vdir));
+vzdir += sign(angle_difference(zdir,vzdir));
 
 zdir = clamp(zdir,-89,89);
 
+//Player facing
 var q=lengthdir_x(1,zdir);
 xVect=lengthdir_x(q,dir);
 yVect=lengthdir_y(q,dir);
 zVect=lengthdir_y(1,zdir);
+
+//Ship movement direction
+var q=lengthdir_x(1,vzdir);
+x+=lengthdir_x(q,vdir);
+y+=lengthdir_y(q,vdir);
+z+=lengthdir_y(1,vzdir);
 </string>
           </argument>
         </arguments>
@@ -93,6 +106,8 @@ zVect=lengthdir_y(1,zdir);
             <string>draw_text(0,0,"X: " + string(x) + "
 Y: " + string(y) + "
 Z: " + string(z));
+
+draw_sprite(s_crosshair,1,view_wport*.5,view_hport*.5);
 </string>
           </argument>
         </arguments>

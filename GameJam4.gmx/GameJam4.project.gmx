@@ -9,6 +9,7 @@
     <sprite>sprites\s_path</sprite>
     <sprite>sprites\s_node</sprite>
     <sprite>sprites\palette</sprite>
+    <sprite>sprites\s_crosshair</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\b_spacefield</background>
