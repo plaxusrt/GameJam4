@@ -147,9 +147,19 @@ draw_text(0,0,"X: " + string(x) + "
 Y: " + string(y) + "
 Z: " + string(z));
 
-draw_text(200,10,instance_count)
+draw_text(200,10,instance_count);
 
 draw_sprite(s_crosshair,1,view_wport*.5,view_hport*.5);
+
+draw_set_halign(fa_right);
+var inst, i=0, str="";
+repeat(instance_number(o_ship)) {
+    inst = instance_find(o_ship,i);
+    str += script_get_name(inst.state) + " : " + string(inst.team) + "#";
+    i+=1;
+}
+draw_text(view_wport,0,str);
+draw_set_halign(fa_left);
 
 //Speed bar
 draw_set_colour(c_olive);

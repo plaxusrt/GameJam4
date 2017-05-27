@@ -32,7 +32,7 @@ z=0;
 
 state = state_wander;
 
-viewRange = 512;
+viewRange = 2048;
 
 shipStats(0);
 
@@ -48,8 +48,6 @@ vzdir=0;
 sxVel=0;
 syVel=0;
 szVel=0;
-
-can_fire=0;
 </string>
           </argument>
         </arguments>

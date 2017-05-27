@@ -15,4 +15,4 @@ if !instance_exists(target) {
     
     scr_shipMovement();
     
-} else state = state_attackTarget();
+} else state = state_attackTarget;
