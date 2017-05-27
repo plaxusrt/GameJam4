@@ -70,10 +70,18 @@
     <background>background\b_spacefield</background>
     <background>background\tex_test</background>
     <background>background\tex_mship_yellow</background>
+    <background>background\tex_red</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_shipMovement.gml</script>
+    <scripts name="bullet scripts">
+      <script>scripts\scr_player_fire.gml</script>
+      <script>scripts\scr_player_bullet_init.gml</script>
+      <script>scripts\scr_player_bullet_update.gml</script>
+      <script>scripts\scr_player_bullet_draw.gml</script>
+      <script>scripts\scr_player_init_for_bullets.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\o_controller</object>

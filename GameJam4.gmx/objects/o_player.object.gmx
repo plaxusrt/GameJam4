@@ -48,6 +48,46 @@ szVel=0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>scr_player_init_for_bullets</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -68,6 +108,46 @@ szVel=0;
             <kind>1</kind>
             <string>scr_shipMovement();
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>scr_player_fire</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -93,6 +173,8 @@ szVel=0;
 Y: " + string(y) + "
 Z: " + string(z));
 
+draw_text(200,10,instance_count)
+
 draw_sprite(s_crosshair,1,view_wport*.5,view_hport*.5);
 
 d3d_set_lighting(false);
@@ -102,6 +184,7 @@ draw_rectangle(0,view_hport-32,64*(spd/maxspd),view_hport,false);
 draw_set_colour(c_black);
 draw_rectangle(0,view_hport-32,64,view_hport,true);
 d3d_set_lighting(true);
+draw_set_colour(c_white);
 </string>
           </argument>
         </arguments>
@@ -125,7 +208,7 @@ d3d_set_lighting(true);
           <argument>
             <kind>1</kind>
             <string>d3d_set_projection_ext(x,y,z,x+xVect,y+yVect,z+zVect,0,0,1,70,aspect,1,16000);
-
+d3d_transform_set_identity();
 d3d_transform_set_rotation_y(vzdir);
 d3d_transform_set_rotation_z(vdir);
 d3d_transform_add_translation(x+sxVect*32,y+syVect*32,z+szVect*32);
