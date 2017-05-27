@@ -130,6 +130,7 @@
     <background>background\tex_fighter</background>
     <background>background\tex_bomber</background>
     <background>background\tex_flare</background>
+    <background>background\tex_gassplanet</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -191,6 +192,9 @@
       <script>scripts\p3dc_clear_model.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader_planet_scroll.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\o_controller</object>
     <object>objects\o_player</object>

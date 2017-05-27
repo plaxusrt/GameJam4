@@ -29,6 +29,17 @@
 d3d_model_ellipsoid(my_mod,-100,-100,-100,100,100,100,1,1,48);
 
 tex = background_get_texture(b_spacefield);
+
+
+
+
+//render for planets
+texp=background_get_texture(tex_gassplanet);
+my_mod2=d3d_model_create();
+d3d_model_ellipsoid(my_mod2,-10,10,-10,10,-10,10,1,1,48);
+unif=shader_get_uniform(shader_planet_scroll,"val")
+scroll=0;
+
 </string>
           </argument>
         </arguments>
@@ -51,11 +62,20 @@ tex = background_get_texture(b_spacefield);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_set_lighting(0)
-d3d_set_hidden(false)
-d3d_model_draw(my_mod,o_player.x,o_player.y,o_player.z,tex)
-d3d_set_hidden(true)
-d3d_set_lighting(1)
+            <string>d3d_set_lighting(0);
+d3d_set_hidden(false);
+//d3d_set_zwriteenable(0)
+d3d_model_draw(my_mod,o_player.x,o_player.y,o_player.z,tex);
+
+scroll+=0.0002
+shader_set(shader_planet_scroll);
+shader_set_uniform_f(unif,scroll)
+d3d_model_draw(my_mod2,o_player.x-11,o_player.y-12,o_player.z-1,texp);
+shader_reset();
+
+//d3d_set_zwriteenable(1)
+d3d_set_hidden(true);
+d3d_set_lighting(1);
 </string>
           </argument>
         </arguments>
