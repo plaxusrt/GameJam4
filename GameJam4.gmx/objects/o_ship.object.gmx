@@ -104,7 +104,7 @@ tex=background_get_texture(tex_bomber);
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>scr_bullet_init</script>
+            <script>scr_init_bullets</script>
           </argument>
           <argument>
             <kind>0</kind>

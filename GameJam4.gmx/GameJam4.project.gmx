@@ -126,6 +126,7 @@
     <background>background\tex_red</background>
     <background>background\tex_fighter</background>
     <background>background\tex_bomber</background>
+    <background>background\tex_mship_lights</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
