@@ -11,7 +11,7 @@
     var dist=point_distance(x,y,wx,wy);
     zdir = point_direction(0,z,dist,wz);
     
-    spd = sqr((1-abs(angle_difference(dir,vdir)/180))*(1-abs(angle_difference(zdir,vzdir)/180)))*maxspd;
+    spd = power((1-abs(angle_difference(dir,vdir)/180))*(1-abs(angle_difference(zdir,vzdir)/180)),3)*maxspd;
     
     scr_shipMovement();
     
