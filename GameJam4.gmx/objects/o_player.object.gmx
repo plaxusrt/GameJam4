@@ -221,8 +221,8 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var lenX = lengthdir_x(24,dir);
-var lenY = lengthdir_y(24,dir);
+            <string>lenX = lengthdir_x(24,dir);
+lenY = lengthdir_y(24,dir);
 
 /*var lenX = lengthdir_x(6,dir);
 var lenY = lengthdir_y(6,dir);

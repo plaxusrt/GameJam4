@@ -119,6 +119,7 @@
     <sprite>sprites\palette</sprite>
     <sprite>sprites\s_crosshair</sprite>
     <sprite>sprites\windows</sprite>
+    <sprite>sprites\s_spot</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\b_spacefield</background>
