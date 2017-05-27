@@ -35,7 +35,7 @@ z=0;
 friction = 0.7;
 aspect = view_wport/view_hport;
 
-shipStats(0);
+shipStats(1);
 
 model_crosshair = d3d_model_create();
 d3d_model_wall(model_crosshair,4,-4,-4,4,4,4,1,1);
@@ -48,8 +48,8 @@ mouse_lock=0;
 team = Player;
 
 model = d3d_model_create();
-d3d_model_load(model,"mod_fighter1.d3d");
-tex=background_get_texture(tex_fighter1);
+d3d_model_load(model,"mod_bomber.d3d");
+tex=background_get_texture(tex_bomber);
 
 d3d_set_projection_ext(x,y,z,x,y,z,0,0,1,70,aspect,1,16000);
 
@@ -220,8 +220,8 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lenX = lengthdir_x(24,dir);
-lenY = lengthdir_y(24,dir);
+            <string>/*lenX = lengthdir_x(24,dir);
+lenY = lengthdir_y(24,dir);*/
 
 /*Backup
 d3d_set_projection( x-xVect*24/*-6*zVect*xVect*///,

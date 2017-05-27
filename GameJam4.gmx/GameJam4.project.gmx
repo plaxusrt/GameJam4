@@ -186,6 +186,7 @@
       <script>scripts\state_dead.gml</script>
       <script>scripts\state_lowEnergy.gml</script>
       <script>scripts\state_wander.gml</script>
+      <script>scripts\state_mwander.gml</script>
       <script>scripts\state_attackTarget.gml</script>
     </scripts>
     <script>scripts\scr_shipMovement.gml</script>
@@ -248,7 +249,7 @@
       <object>objects\o_shipParent</object>
       <object>objects\o_player</object>
       <object>objects\o_playerDraw</object>
-      <object>objects\o_enemy_mship</object>
+      <object>objects\o_mship</object>
       <object>objects\o_ship</object>
     </objects>
     <objects name="Star System">

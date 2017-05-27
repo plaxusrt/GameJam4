@@ -28,7 +28,7 @@
             <string>d3d_start();
 draw_set_color(c_white);
 texture_set_repeat(true);
-
+show_debug_overlay(true);
 
 
 d3d_set_lighting(true);

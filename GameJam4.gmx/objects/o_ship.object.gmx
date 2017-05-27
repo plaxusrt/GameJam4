@@ -34,7 +34,7 @@ state = state_wander;
 
 viewRange = 2048;
 
-shipStats(0);
+shipStats(1);
 
 wx=-1;
 wy=-1;
@@ -207,9 +207,9 @@ script_execute(state);
             <string>/*draw_set_colour(c_white);
 d3d_draw_ellipsoid(x-30,y-30,z-30,x+30,y+30,z+30,-1,1,1,24);*/
 
-draw_set_colour(c_yellow);
+/*draw_set_colour(c_yellow);
 d3d_draw_ellipsoid(wx-10,wy-10,wz-10,wx+10,wy+10,wz+10,-1,1,1,24);
-draw_set_colour(c_white);
+draw_set_colour(c_white);*/
 
 d3d_transform_set_identity();
 d3d_transform_add_rotation_y(-vzdir)

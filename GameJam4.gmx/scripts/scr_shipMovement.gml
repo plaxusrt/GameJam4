@@ -1,7 +1,7 @@
 dir = dir % 360;
 
-vdir += clamp(angle_difference(dir,vdir),spd*.3-maxspd*1.75,maxspd*1.75-spd*.3);
-vzdir += clamp(angle_difference(zdir,vzdir),spd*.3-maxspd*1.75,maxspd*1.75-spd*.3);
+vdir += clamp(angle_difference(dir,vdir),spd-spdTurn,spdTurn-spd);
+vzdir += clamp(angle_difference(zdir,vzdir),spd-spdTurn,spdTurn-spd);
 
 zdir = clamp(zdir,-89,89);
 
@@ -27,6 +27,6 @@ y+=syVel;
 z+=szVel;
 
 //Dampeners
-sxVel*=0.95;
-syVel*=0.95;
-szVel*=0.95;
+sxVel*=0.90;
+syVel*=0.90;
+szVel*=0.90;
