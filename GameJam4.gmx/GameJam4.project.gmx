@@ -57,7 +57,9 @@
     </datafile>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_target_alarm</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_path</sprite>
     <sprite>sprites\s_node</sprite>
@@ -78,6 +80,7 @@
     <object>objects\o_player</object>
     <object>objects\o_enemy_mship</object>
     <object>objects\o_skybox</object>
+    <object>objects\o_player_bullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_play</room>
