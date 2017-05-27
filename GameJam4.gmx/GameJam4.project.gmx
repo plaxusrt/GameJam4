@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="8" name="datafiles">
+  <datafiles number="9" name="datafiles">
     <datafile>
       <name>mod_mship.d3d</name>
       <exists>-1</exists>
@@ -72,10 +72,29 @@
       </ConfigOptions>
       <filename>P3DC.dll</filename>
     </datafile>
+    <datafile>
+      <name>mod_fighter1.3ds</name>
+      <exists>-1</exists>
+      <size>11833</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>mod_fighter1.3ds</filename>
+    </datafile>
   </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_target_alarm</sound>
+    <sound>sound\snd_fire1</sound>
+    <sound>sound\snd_fire1_3d</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_path</sprite>
