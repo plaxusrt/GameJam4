@@ -192,6 +192,10 @@
       <script>scripts\p3dc_ray.gml</script>
       <script>scripts\p3dc_clear_model.gml</script>
     </scripts>
+    <scripts name="Node Functions">
+      <script>scripts\genNodes.gml</script>
+      <script>scripts\node_checkConnection.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader_planet_scroll.shader</shader>
@@ -205,8 +209,15 @@
     <object>objects\o_ship</object>
     <object>objects\o_shipParent</object>
     <object>objects\o_playerDraw</object>
+    <object>objects\o_nodeMaster</object>
+    <object>objects\o_node</object>
+    <objects name="Star System (Temp OBJ)">
+      <object>objects\o_tmp_connect</object>
+      <object>objects\o_arm</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_conquest</room>
     <room>rooms\room_play</room>
   </rooms>
   <constants number="2">
