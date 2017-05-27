@@ -1,7 +1,7 @@
 if instance_exists(target) {
     //Face the enemy
     dir = point_direction(x,y,target.x,target.y);
-    var dist=point_distance(x,y,ytarget.x,target.y);
+    var dist=point_distance(x,y,target.x,target.y);
     zdir = point_direction(0,z,dist,target.z);
     
     diff = (1-abs(angle_difference(dir,vdir)/180))*(1-abs(angle_difference(zdir,vzdir)/180));
@@ -9,7 +9,7 @@ if instance_exists(target) {
         scr_fire();
     }
     
+    spd = power((1-abs(angle_difference(dir,vdir)/180))*(1-abs(angle_difference(zdir,vzdir)/180)),3)*maxspd;
+    
     scr_shipMovement();
-} else {
-    state = state_wander;
-}
+} else state = state_wander;

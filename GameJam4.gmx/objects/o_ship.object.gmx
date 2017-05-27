@@ -144,7 +144,7 @@ tex=background_get_texture(tex_bomber);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>target = scr_findTarget(target);
+            <string>target = scr_findTarget();
 alarm=room_speed;
 </string>
           </argument>

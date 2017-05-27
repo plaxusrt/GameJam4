@@ -155,7 +155,7 @@ draw_set_halign(fa_right);
 var inst, i=0, str="";
 repeat(instance_number(o_ship)) {
     inst = instance_find(o_ship,i);
-    str += script_get_name(inst.state) + " : " + string(inst.team) + "#";
+    str += script_get_name(inst.state) + " : " + string(inst.team) + " : " + string(inst.target) + "#";
     i+=1;
 }
 draw_text(view_wport,0,str);
