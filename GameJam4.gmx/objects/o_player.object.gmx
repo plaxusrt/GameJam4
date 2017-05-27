@@ -44,7 +44,7 @@ tex = sprite_get_texture(s_crosshair,0);
 sxVel=0;
 syVel=0;
 szVel=0;
-
+mouse_lock=0;
 team = Player;
 </string>
           </argument>
@@ -108,7 +108,13 @@ team = Player;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_shipMovement();
+            <string>
+if mouse_lock=false{
+dir -= (display_mouse_get_x() - (window_get_x()+window_get_width()*.5))*.12;
+zdir += (display_mouse_get_y() - (window_get_y()+window_get_height()*.5))*.12;
+display_mouse_set(window_get_x()+window_get_width()*.5,window_get_y()+window_get_height()*.5);
+}
+scr_shipMovement();
 energy = min(energy+0.1,maxenergy);
 can_fire -= 1;
 if mouse_check_button(mb_left) {
@@ -192,12 +198,12 @@ draw_set_colour(c_white);
           <argument>
             <kind>1</kind>
             <string>d3d_set_projection_ext(x,y,z,x+xVect,y+yVect,z+zVect,0,0,1,70,aspect,1,16000);
-d3d_transform_set_identity();
+/*d3d_transform_set_identity();
 d3d_transform_set_rotation_y(vzdir);
 d3d_transform_set_rotation_z(vdir);
 d3d_transform_add_translation(x+sxVect*32,y+syVect*32,z+szVect*32);
 d3d_model_draw(model_crosshair,0,0,0,tex);
-d3d_transform_set_identity();
+d3d_transform_set_identity();*/
 </string>
           </argument>
         </arguments>
@@ -221,6 +227,29 @@ d3d_transform_set_identity();
           <argument>
             <kind>2</kind>
             <string>snapshot.png</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="113">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if mouse_lock=true {mouse_lock=false;} else mouse_lock=true;
+</string>
           </argument>
         </arguments>
       </action>

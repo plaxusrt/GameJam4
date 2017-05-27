@@ -1,9 +1,6 @@
 //I will try to make the ships seem more realistic
 //My plan is to make them turn faster if the player has stopped and turn slower if the player is moving fast.
 //I will also make the ship show a crosshair, so we know where the ship is exactly aiming at.
-dir -= (display_mouse_get_x() - (window_get_x()+window_get_width()*.5))*.12;
-zdir += (display_mouse_get_y() - (window_get_y()+window_get_height()*.5))*.12;
-display_mouse_set(window_get_x()+window_get_width()*.5,window_get_y()+window_get_height()*.5);
 
 dir = dir % 360;
 

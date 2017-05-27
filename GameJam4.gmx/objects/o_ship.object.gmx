@@ -52,6 +52,40 @@ szVel=0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+var ch=choose(0,1);
+model=d3d_model_create();
+
+if ch=0
+{
+d3d_model_load(model,"mod_fighter1.d3d");
+tex=background_get_texture(tex_fighter);
+}
+else
+{
+d3d_model_load(model,"mod_bomber.d3d");
+tex=background_get_texture(tex_bomber);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -117,12 +151,20 @@ alarm=room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_white);
+            <string>/*draw_set_colour(c_white);
 d3d_draw_ellipsoid(x-30,y-30,z-30,x+30,y+30,z+30,-1,1,1,24);
 
 draw_set_colour(c_yellow);
 d3d_draw_ellipsoid(wx-10,wy-10,wz-10,wx+10,wy+10,wz+10,-1,1,1,24);
-draw_set_colour(c_white);
+draw_set_colour(c_white);*/
+
+d3d_transform_set_identity();
+d3d_transform_add_rotation_y(-vzdir)
+d3d_transform_add_rotation_z(vdir)
+d3d_transform_add_scaling(0.05,0.05,0.05);
+d3d_transform_add_translation(x,y,z);
+d3d_model_draw(model,0,0,0,tex);
+d3d_transform_set_identity();
 </string>
           </argument>
         </arguments>
