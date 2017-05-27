@@ -54,7 +54,6 @@ tex = background_get_texture(tex_bomber);
 d3d_set_projection_ext(x,y,z,x,y,z,0,0,1,70,aspect,1,16000);
 
 instance_create(x,y,o_playerDraw);
-
 </string>
           </argument>
         </arguments>
@@ -224,19 +223,20 @@ draw_set_colour(c_white);
             <string>lenX = lengthdir_x(24,dir);
 lenY = lengthdir_y(24,dir);
 
-/*var lenX = lengthdir_x(6,dir);
-var lenY = lengthdir_y(6,dir);
-d3d_set_projection( x-xVect*24+lenX,
-                    y-yVect*24+lenY,
-                    z-zVect*24+6
-                    ,x,y,z+6,0,0,1);
-*/
-d3d_set_projection( x-lenX,
-                    y-lenY,
-                    z+6,
-                    x-lenX+xVect,
-                    y-lenY+yVect,
-                    z+6+zVect,0,0,1);
+/*Backup
+d3d_set_projection( x-xVect*24/*-6*zVect*xVect*///,
+//                    y-yVect*24/*-6*zVect*yVect*/,
+//                    z+6*(1-abs(zVect))-24*zVect,
+//                    x-xVect*24+xVect/*-6*zVect*xVect*/,
+//                    y-yVect*24+yVect/*-6*zVect*yVect*/,
+//                   z+6*(1-abs(zVect))-24*zVect+zVect,0,0,1);
+
+d3d_set_projection( x-xVect*24,
+                    y-yVect*24,
+                    z+6*(1-abs(zVect))-24*zVect,
+                    x-xVect*24+xVect,
+                    y-yVect*24+yVect,
+                    z+6*(1-abs(zVect))-24*zVect+zVect,0,0,1);
 </string>
           </argument>
         </arguments>
