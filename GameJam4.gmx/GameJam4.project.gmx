@@ -77,9 +77,9 @@
     <scripts name="bullet scripts">
       <script>scripts\scr_fire.gml</script>
       <script>scripts\scr_bullet_init.gml</script>
-      <script>scripts\scr_player_bullet_update.gml</script>
-      <script>scripts\scr_player_bullet_draw.gml</script>
-      <script>scripts\scr_player_init_for_bullets.gml</script>
+      <script>scripts\scr_bullet_update.gml</script>
+      <script>scripts\scr_bullet_draw.gml</script>
+      <script>scripts\scr_init_bullets.gml</script>
     </scripts>
     <scripts name="AI States">
       <script>scripts\state_dead.gml</script>

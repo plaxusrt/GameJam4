@@ -67,7 +67,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>scr_player_bullet_update</script>
+            <script>scr_bullet_update</script>
           </argument>
           <argument>
             <kind>0</kind>
@@ -109,7 +109,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>scr_player_bullet_draw</script>
+            <script>scr_bullet_draw</script>
           </argument>
           <argument>
             <kind>0</kind>

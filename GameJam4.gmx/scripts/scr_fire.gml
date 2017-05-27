@@ -1,8 +1,9 @@
 can_fire-=1;
 if mouse_check_button(mb_left){
 
-    if can_fire<0{
+    if can_fire<0 and energy > 1{
     can_fire=fire_rate;
+    energy--;
     
     var inst=instance_create(x,y,o_bullet);
     inst.dir=dir;
