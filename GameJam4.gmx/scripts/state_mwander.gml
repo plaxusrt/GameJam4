@@ -1,7 +1,7 @@
 if wx = -1 {
     wx = random(room_width*5)-room_width*2.5;
     wy = random(room_height*5)-room_height*2.5;
-    wz = random(room_width*2.5)-room_width*1.25;
+    wz = z+random(room_width*.5)-room_width*.25;
 }
 if point_distance_3d(x,y,z,wx,wy,wz) < 256 {
     wx = -1;
