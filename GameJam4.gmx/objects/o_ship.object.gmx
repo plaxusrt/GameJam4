@@ -48,6 +48,8 @@ vzdir=0;
 sxVel=0;
 syVel=0;
 szVel=0;
+
+can_fire=0;
 </string>
           </argument>
         </arguments>
@@ -83,6 +85,46 @@ d3d_model_load(model,"mod_bomber.d3d");
 tex=background_get_texture(tex_bomber);
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>scr_bullet_init</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -128,7 +170,9 @@ alarm=room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(state);
+            <string>energy = min(energy+0.1,maxenergy);
+can_fire -= 1;
+script_execute(state);
 </string>
           </argument>
         </arguments>
@@ -152,11 +196,11 @@ alarm=room_speed;
           <argument>
             <kind>1</kind>
             <string>/*draw_set_colour(c_white);
-d3d_draw_ellipsoid(x-30,y-30,z-30,x+30,y+30,z+30,-1,1,1,24);
+d3d_draw_ellipsoid(x-30,y-30,z-30,x+30,y+30,z+30,-1,1,1,24);*/
 
 draw_set_colour(c_yellow);
 d3d_draw_ellipsoid(wx-10,wy-10,wz-10,wx+10,wy+10,wz+10,-1,1,1,24);
-draw_set_colour(c_white);*/
+draw_set_colour(c_white);
 
 d3d_transform_set_identity();
 d3d_transform_add_rotation_y(-vzdir)

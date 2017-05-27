@@ -118,14 +118,11 @@
     <sprite>sprites\s_node</sprite>
     <sprite>sprites\palette</sprite>
     <sprite>sprites\s_crosshair</sprite>
-    <sprite>sprites\windows</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\b_spacefield</background>
     <background>background\tex_test</background>
     <background>background\tex_mship_yellow</background>
-    <background>background\tex_mship_lights</background>
-    <background>background\background7</background>
     <background>background\tex_red</background>
     <background>background\tex_fighter</background>
     <background>background\tex_bomber</background>

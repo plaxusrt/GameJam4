@@ -108,8 +108,7 @@ team = Player;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if mouse_lock=false{
+            <string>if !mouse_lock {
 dir -= (display_mouse_get_x() - (window_get_x()+window_get_width()*.5))*.12;
 zdir += (display_mouse_get_y() - (window_get_y()+window_get_height()*.5))*.12;
 display_mouse_set(window_get_x()+window_get_width()*.5,window_get_y()+window_get_height()*.5);
