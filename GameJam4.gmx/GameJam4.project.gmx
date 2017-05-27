@@ -70,6 +70,9 @@
     <background>background\tex_mship_yellow</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_shipMovement.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\o_controller</object>
     <object>objects\o_player</object>
