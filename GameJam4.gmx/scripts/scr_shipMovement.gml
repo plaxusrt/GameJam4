@@ -38,4 +38,4 @@ sxVel*=0.9;
 syVel*=0.9;
 szVel*=0.9;
 
-spd=clamp(spd+(keyboard_check(ord("W"))-keyboard_check(ord("S")))*.1,0,maxspd);;
+

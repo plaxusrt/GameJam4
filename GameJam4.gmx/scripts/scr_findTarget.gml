@@ -7,4 +7,4 @@ for (var i = 0; i < instance_number(o_shipParent); i++) {
         tar = inst.id;
     }
 }
-if point_distance(x,y,tar.x,tar.y) < 256 return tar else return noone;
+if instance_exists(target) and point_distance(x,y,tar.x,tar.y) < viewRange return tar else return noone;

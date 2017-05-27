@@ -1,7 +1,4 @@
-can_fire-=1;
-if mouse_check_button(mb_left){
-
-    if can_fire<0 and energy > 1{
+    if can_fire<0 and energy>1{
     can_fire=fire_rate;
     energy--;
     
@@ -15,8 +12,5 @@ if mouse_check_button(mb_left){
     inst.vx=lengthdir_x(q,dir-(fire_bloom*.5)+random(fire_bloom));
     inst.vy=lengthdir_y(q,dir-(fire_bloom*.5)+random(fire_bloom));
     inst.vz=lengthdir_y(1,zdir-(fire_bloom*.5)+random(fire_bloom));
-    
-    }
-    
     
     }

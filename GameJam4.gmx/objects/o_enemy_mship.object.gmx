@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>o_shipParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,6 +30,8 @@ my_mod2=d3d_model_create();
 d3d_model_load(my_mod1,"mod_mship_p1.d3d")
 d3d_model_load(my_mod2,"mod_mship_p2.d3d")
 tex=background_get_texture(tex_mship_yellow)
+
+team = Enemy;
 </string>
           </argument>
         </arguments>

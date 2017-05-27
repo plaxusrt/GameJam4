@@ -84,7 +84,7 @@
     <scripts name="AI States">
       <script>scripts\state_dead.gml</script>
       <script>scripts\state_lowEnergy.gml</script>
-      <script>scripts\state_wonder.gml</script>
+      <script>scripts\state_wander.gml</script>
       <script>scripts\state_attackTarget.gml</script>
     </scripts>
     <script>scripts\scr_shipMovement.gml</script>
