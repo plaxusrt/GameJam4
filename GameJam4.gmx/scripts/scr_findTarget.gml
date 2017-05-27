@@ -1,10 +1,13 @@
-///scr_findTarget(curTar)
-//Put in the current target for comparison
-var inst, tar = argument0;
-for (var i = 0; i < instance_number(o_shipParent); i++) {
-    inst = instance_find(o_shipParent,i);
-    if inst.team != team and (tar == noone or point_distance(x,y,inst.x,inst.y) < point_distance(x,y,tar.x,tar.y)) {
-        tar = inst.id;
-    }
+///scr_findTarget()
+var ds, tar;
+ds = ds_priority_create();
+ds_priority_add(ds,noone,100000);
+with(o_shipParent) {
+    if team != other.team ds_priority_add(ds,id,point_distance(x,y,other.x,other.y));
 }
-if instance_exists(target) and point_distance(x,y,tar.x,tar.y) < viewRange return tar else return noone;
+tar = ds_priority_find_min(ds);
+ds_priority_destroy(ds);
+
+if tar != noone and point_distance(x,y,tar.x,tar.y) < viewRange {
+    return tar
+} else return noone;

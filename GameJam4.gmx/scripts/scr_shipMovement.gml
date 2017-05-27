@@ -1,7 +1,3 @@
-//I will try to make the ships seem more realistic
-//My plan is to make them turn faster if the player has stopped and turn slower if the player is moving fast.
-//I will also make the ship show a crosshair, so we know where the ship is exactly aiming at.
-
 dir = dir % 360;
 
 vdir += clamp(angle_difference(dir,vdir),spd*.3-maxspd,maxspd-spd*.3);
@@ -31,8 +27,6 @@ y+=syVel;
 z+=szVel;
 
 //Dampeners
-sxVel*=0.9;
-syVel*=0.9;
-szVel*=0.9;
-
-
+sxVel*=0.95;
+syVel*=0.95;
+szVel*=0.95;

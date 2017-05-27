@@ -9,6 +9,6 @@ switch(argument0) {
         maxhp=hp;
         shield=5;
         maxshield=shield;
-        range = 256;
+        range = 1024;
     break;
 }

@@ -1,10 +1,10 @@
-//if !instance_exists(target) {
+if !instance_exists(target) {
     if wx = -1 {
-        wx = random(room_width);
-        wy = random(room_height);
-        wz = random(room_width)-room_width*.5;
+        wx = random(room_width*5)-room_width*2.5;
+        wy = random(room_height*5)-room_height*2.5;
+        wz = random(room_width*2.5)-room_width*1.25;
     }
-    if point_distance_3d(x,y,z,wx,wy,wz) < 128 {
+    if point_distance_3d(x,y,z,wx,wy,wz) < 256 {
         wx = -1;
     }
     dir = point_direction(x,y,wx,wy);
@@ -15,4 +15,4 @@
     
     scr_shipMovement();
     
-//} else state = state_attackTarget();
+} else state = state_attackTarget;
