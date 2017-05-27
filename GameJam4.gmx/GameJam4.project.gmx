@@ -74,25 +74,39 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_shipMovement.gml</script>
     <scripts name="bullet scripts">
-      <script>scripts\scr_player_fire.gml</script>
-      <script>scripts\scr_player_bullet_init.gml</script>
+      <script>scripts\scr_fire.gml</script>
+      <script>scripts\scr_bullet_init.gml</script>
       <script>scripts\scr_player_bullet_update.gml</script>
       <script>scripts\scr_player_bullet_draw.gml</script>
       <script>scripts\scr_player_init_for_bullets.gml</script>
     </scripts>
+    <scripts name="AI States">
+      <script>scripts\state_dead.gml</script>
+      <script>scripts\state_lowEnergy.gml</script>
+      <script>scripts\state_wonder.gml</script>
+      <script>scripts\state_attackTarget.gml</script>
+    </scripts>
+    <script>scripts\scr_shipMovement.gml</script>
+    <script>scripts\shipStats.gml</script>
+    <script>scripts\scr_findTarget.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\o_controller</object>
     <object>objects\o_player</object>
     <object>objects\o_enemy_mship</object>
     <object>objects\o_skybox</object>
-    <object>objects\o_player_bullet</object>
+    <object>objects\o_bullet</object>
+    <object>objects\o_ship</object>
+    <object>objects\o_shipParent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_play</room>
   </rooms>
+  <constants number="2">
+    <constant name="Player">0</constant>
+    <constant name="Enemy">1</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

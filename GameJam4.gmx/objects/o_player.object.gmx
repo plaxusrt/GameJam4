@@ -34,8 +34,8 @@ vzdir = 0;
 z=0;
 friction = 0.7;
 aspect = view_wport/view_hport;
-spd=1;
-maxspd=spd;
+
+shipStats(0);
 
 model_crosshair = d3d_model_create();
 d3d_model_wall(model_crosshair,4,-4,-4,4,4,4,1,1);
@@ -44,6 +44,8 @@ tex = sprite_get_texture(s_crosshair,0);
 sxVel=0;
 syVel=0;
 szVel=0;
+
+team = Player;
 </string>
           </argument>
         </arguments>
@@ -127,7 +129,7 @@ szVel=0;
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>scr_player_fire</script>
+            <script>scr_fire</script>
           </argument>
           <argument>
             <kind>0</kind>

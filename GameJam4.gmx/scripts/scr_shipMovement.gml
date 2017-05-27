@@ -7,8 +7,8 @@ display_mouse_set(window_get_x()+window_get_width()*.5,window_get_y()+window_get
 
 dir = dir % 360;
 
-vdir += clamp(angle_difference(dir,vdir),spd*.5-maxspd,maxspd-spd*.5);
-vzdir += clamp(angle_difference(zdir,vzdir),spd*.5-maxspd,maxspd-spd*.5);
+vdir += clamp(angle_difference(dir,vdir),spd*.3-maxspd,maxspd-spd*.3);
+vzdir += clamp(angle_difference(zdir,vzdir),spd*.3-maxspd,maxspd-spd*.3);
 
 zdir = clamp(zdir,-89,89);
 
