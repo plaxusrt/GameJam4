@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="7" name="datafiles">
+  <datafiles number="8" name="datafiles">
     <datafile>
       <name>mod_mship.d3d</name>
       <exists>-1</exists>
@@ -55,6 +55,23 @@
       </ConfigOptions>
       <filename>mod_mship_p2.d3d</filename>
     </datafile>
+    <datafile>
+      <name>P3DC.dll</name>
+      <exists>-1</exists>
+      <size>87040</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>P3DC.dll</filename>
+    </datafile>
   </datafiles>
   <NewExtensions/>
   <sounds name="sound">
@@ -90,6 +107,47 @@
     <script>scripts\scr_shipMovement.gml</script>
     <script>scripts\shipStats.gml</script>
     <script>scripts\scr_findTarget.gml</script>
+    <scripts name="collision">
+      <script>scripts\p3dc_init.gml</script>
+      <script>scripts\p3dc_add_block.gml</script>
+      <script>scripts\p3dc_add_model.gml</script>
+      <script>scripts\p3dc_add_cone.gml</script>
+      <script>scripts\p3dc_add_floor.gml</script>
+      <script>scripts\p3dc_begin_model.gml</script>
+      <script>scripts\p3dc_add_wall.gml</script>
+      <script>scripts\p3dc_add_cylinder.gml</script>
+      <script>scripts\p3dc_begin_overwrite.gml</script>
+      <script>scripts\p3dc_begin_replace.gml</script>
+      <script>scripts\p3dc_check.gml</script>
+      <script>scripts\p3dc_add_triangle.gml</script>
+      <script>scripts\p3dc_check_split.gml</script>
+      <script>scripts\p3dc_check_still.gml</script>
+      <script>scripts\p3dc_check_rotation.gml</script>
+      <script>scripts\p3dc_end_model.gml</script>
+      <script>scripts\p3dc_end_overwrite.gml</script>
+      <script>scripts\p3dc_end_replace.gml</script>
+      <script>scripts\p3dc_free.gml</script>
+      <script>scripts\p3dc_get_splitid.gml</script>
+      <script>scripts\p3dc_get_lastmask.gml</script>
+      <script>scripts\p3dc_get_models.gml</script>
+      <script>scripts\p3dc_get_triangles.gml</script>
+      <script>scripts\p3dc_overwrite_block.gml</script>
+      <script>scripts\p3dc_overwrite_floor.gml</script>
+      <script>scripts\p3dc_overwrite_cone.gml</script>
+      <script>scripts\p3dc_overwrite_triangle.gml</script>
+      <script>scripts\p3dc_overwrite_wall.gml</script>
+      <script>scripts\p3dc_overwrite_cylinder.gml</script>
+      <script>scripts\p3dc_ray_first.gml</script>
+      <script>scripts\p3dc_ray_rotation.gml</script>
+      <script>scripts\p3dc_ray_split.gml</script>
+      <script>scripts\p3dc_ray_still.gml</script>
+      <script>scripts\p3dc_set_modrot.gml</script>
+      <script>scripts\p3dc_set_trianglemask.gml</script>
+      <script>scripts\p3dc_split_model.gml</script>
+      <script>scripts\p3dc_triangle_data.gml</script>
+      <script>scripts\p3dc_ray.gml</script>
+      <script>scripts\p3dc_clear_model.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\o_controller</object>
