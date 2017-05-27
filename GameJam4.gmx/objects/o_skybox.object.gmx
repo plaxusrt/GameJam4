@@ -51,9 +51,11 @@ tex = background_get_texture(b_spacefield);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_set_hidden(false)
+            <string>d3d_set_lighting(0)
+d3d_set_hidden(false)
 d3d_model_draw(my_mod,o_player.x,o_player.y,o_player.z,tex)
 d3d_set_hidden(true)
+d3d_set_lighting(1)
 </string>
           </argument>
         </arguments>

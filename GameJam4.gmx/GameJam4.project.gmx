@@ -3,28 +3,11 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
-    <datafile>
-      <name>test_block.d3d</name>
-      <exists>-1</exists>
-      <size>1089663</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>test_block.d3d</filename>
-    </datafile>
+  <datafiles number="7" name="datafiles">
     <datafile>
       <name>mod_mship.d3d</name>
       <exists>-1</exists>
-      <size>108877</size>
+      <size>107765</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -37,6 +20,40 @@
         </Config>
       </ConfigOptions>
       <filename>mod_mship.d3d</filename>
+    </datafile>
+    <datafile>
+      <name>mod_mship_p1.d3d</name>
+      <exists>-1</exists>
+      <size>46538</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>mod_mship_p1.d3d</filename>
+    </datafile>
+    <datafile>
+      <name>mod_mship_p2.d3d</name>
+      <exists>-1</exists>
+      <size>69454</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>mod_mship_p2.d3d</filename>
     </datafile>
   </datafiles>
   <NewExtensions/>

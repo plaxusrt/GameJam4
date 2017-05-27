@@ -136,6 +136,28 @@ draw_sprite(s_crosshair,1,view_wport*.5,view_hport*.5);
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="114">
+      <action>
+        <libid>1</libid>
+        <id>802</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_snapshot</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>2</kind>
+            <string>snapshot.png</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="27">
       <action>
         <libid>1</libid>

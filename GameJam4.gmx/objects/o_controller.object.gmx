@@ -28,6 +28,13 @@
             <string>d3d_start();
 draw_set_color(c_white);
 texture_set_repeat(true);
+
+
+
+d3d_set_lighting(true);
+d3d_light_define_direction(1,.5,.5,.5,c_white)
+d3d_light_enable(1,1)
+d3d_light_define_ambient(c_dkgray)
 </string>
           </argument>
         </arguments>
