@@ -33,7 +33,13 @@ vdir = 0;
 vzdir = 0;
 z=0;
 friction = 0.7;
-aspect = display_get_width()/display_get_height();
+aspect = view_wport/view_hport;
+spd=1;
+maxspd=spd;
+
+model_crosshair = d3d_model_create();
+d3d_model_wall(model_crosshair,4,-4,-4,4,4,4,1,1);
+tex = sprite_get_texture(s_crosshair,0);
 </string>
           </argument>
         </arguments>
@@ -65,8 +71,8 @@ display_mouse_set(window_get_x()+window_get_width()*.5,window_get_y()+window_get
 
 dir = dir % 360;
 
-vdir += sign(angle_difference(dir,vdir));
-vzdir += sign(angle_difference(zdir,vzdir));
+vdir += clamp(angle_difference(dir,vdir),-1,1);
+vzdir += clamp(angle_difference(zdir,vzdir),-1,1);
 
 zdir = clamp(zdir,-89,89);
 
@@ -77,10 +83,16 @@ yVect=lengthdir_y(q,dir);
 zVect=lengthdir_y(1,zdir);
 
 //Ship movement direction
-var q=lengthdir_x(1,vzdir);
-x+=lengthdir_x(q,vdir);
-y+=lengthdir_y(q,vdir);
-z+=lengthdir_y(1,vzdir);
+q=lengthdir_x(1,vzdir);
+sxVect=lengthdir_x(q,vdir);
+syVect=lengthdir_y(q,vdir);
+szVect=lengthdir_y(1,vzdir);
+
+x+=sxVect*spd;
+y+=syVect*spd;
+z+=szVect*spd;
+
+spd=clamp(spd+(keyboard_check(ord("W"))-keyboard_check(ord("S")))*.1,0,maxspd);;
 </string>
           </argument>
         </arguments>
@@ -108,6 +120,14 @@ Y: " + string(y) + "
 Z: " + string(z));
 
 draw_sprite(s_crosshair,1,view_wport*.5,view_hport*.5);
+
+d3d_set_lighting(false);
+//Speed bar
+draw_set_colour(c_blue);
+draw_rectangle(0,view_hport-32,64*(spd/maxspd),view_hport,false);
+draw_set_colour(c_black);
+draw_rectangle(0,view_hport-32,64,view_hport,true);
+d3d_set_lighting(true);
 </string>
           </argument>
         </arguments>
@@ -131,6 +151,12 @@ draw_sprite(s_crosshair,1,view_wport*.5,view_hport*.5);
           <argument>
             <kind>1</kind>
             <string>d3d_set_projection_ext(x,y,z,x+xVect,y+yVect,z+zVect,0,0,1,70,aspect,1,16000);
+
+d3d_transform_set_rotation_y(vzdir);
+d3d_transform_set_rotation_z(vdir);
+d3d_transform_add_translation(x+sxVect*32,y+syVect*32,z+szVect*32);
+d3d_model_draw(model_crosshair,0,0,0,tex);
+d3d_transform_set_identity();
 </string>
           </argument>
         </arguments>
