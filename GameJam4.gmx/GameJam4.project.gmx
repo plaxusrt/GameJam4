@@ -129,6 +129,7 @@
     <background>background\tex_red</background>
     <background>background\tex_fighter</background>
     <background>background\tex_bomber</background>
+    <background>background\tex_flare</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
