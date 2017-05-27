@@ -3,14 +3,14 @@
     energy--;
     
     var inst=instance_create(x,y,o_bullet);
-    inst.dir=dir;
-    inst.zdir=zdir;
+    inst.dir=vdir;
+    inst.zdir=vzdir;
     inst.z=z;
     inst.team = team;
     
-    var q=lengthdir_x(1,zdir-(fire_bloom*.5)+random(fire_bloom));
-    inst.vx=lengthdir_x(q,dir-(fire_bloom*.5)+random(fire_bloom));
-    inst.vy=lengthdir_y(q,dir-(fire_bloom*.5)+random(fire_bloom));
-    inst.vz=lengthdir_y(1,zdir-(fire_bloom*.5)+random(fire_bloom));
+    var q=lengthdir_x(1,vzdir-(fire_bloom*.5)+random(fire_bloom));
+    inst.vx=lengthdir_x(q,vdir-(fire_bloom*.5)+random(fire_bloom));
+    inst.vy=lengthdir_y(q,vdir-(fire_bloom*.5)+random(fire_bloom));
+    inst.vz=lengthdir_y(1,vzdir-(fire_bloom*.5)+random(fire_bloom));
     
     }

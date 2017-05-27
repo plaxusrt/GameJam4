@@ -46,6 +46,15 @@ syVel=0;
 szVel=0;
 mouse_lock=0;
 team = Player;
+
+model = d3d_model_create();
+d3d_model_load(model,"mod_bomber.d3d");
+tex = background_get_texture(tex_bomber);
+
+d3d_set_projection_ext(x,y,z,x,y,z,0,0,1,70,aspect,1,16000);
+
+instance_create(x,y,o_playerDraw);
+
 </string>
           </argument>
         </arguments>
@@ -119,7 +128,10 @@ can_fire -= 1;
 if mouse_check_button(mb_left) {
     scr_fire();
 }
-spd=clamp(spd+(keyboard_check(ord("W"))-keyboard_check(ord("S")))*.1,0,maxspd);;
+spd=clamp(spd+(keyboard_check(ord("W"))-keyboard_check(ord("S")))*.1,0,maxspd);
+//debugging
+dir+=(keyboard_check(vk_right)-keyboard_check(vk_left))*.1;
+zdir+=(keyboard_check(vk_up)-keyboard_check(vk_down))*.1;
 </string>
           </argument>
         </arguments>
@@ -145,7 +157,10 @@ spd=clamp(spd+(keyboard_check(ord("W"))-keyboard_check(ord("S")))*.1,0,maxspd);;
             <string>d3d_set_lighting(false);
 draw_text(0,0,"X: " + string(x) + "
 Y: " + string(y) + "
-Z: " + string(z));
+Z: " + string(z) + "
+XV: " + string(xVect) + "
+YV: " + string(yVect) + "
+ZV: " + string(zVect));
 
 draw_text(200,10,instance_count);
 
@@ -206,13 +221,22 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_set_projection_ext(x,y,z,x+xVect,y+yVect,z+zVect,0,0,1,70,aspect,1,16000);
-/*d3d_transform_set_identity();
-d3d_transform_set_rotation_y(vzdir);
-d3d_transform_set_rotation_z(vdir);
-d3d_transform_add_translation(x+sxVect*32,y+syVect*32,z+szVect*32);
-d3d_model_draw(model_crosshair,0,0,0,tex);
-d3d_transform_set_identity();*/
+            <string>var lenX = lengthdir_x(24,dir);
+var lenY = lengthdir_y(24,dir);
+
+/*var lenX = lengthdir_x(6,dir);
+var lenY = lengthdir_y(6,dir);
+d3d_set_projection( x-xVect*24+lenX,
+                    y-yVect*24+lenY,
+                    z-zVect*24+6
+                    ,x,y,z+6,0,0,1);
+*/
+d3d_set_projection( x-lenX,
+                    y-lenY,
+                    z+6,
+                    x-lenX+xVect,
+                    y-lenY+yVect,
+                    z+6+zVect,0,0,1);
 </string>
           </argument>
         </arguments>

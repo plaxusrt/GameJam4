@@ -1,7 +1,7 @@
 dir = dir % 360;
 
-vdir += clamp(angle_difference(dir,vdir),spd*.3-maxspd,maxspd-spd*.3);
-vzdir += clamp(angle_difference(zdir,vzdir),spd*.3-maxspd,maxspd-spd*.3);
+vdir += clamp(angle_difference(dir,vdir),spd*.3-maxspd*1.75,maxspd*1.75-spd*.3);
+vzdir += clamp(angle_difference(zdir,vzdir),spd*.3-maxspd*1.75,maxspd*1.75-spd*.3);
 
 zdir = clamp(zdir,-89,89);
 

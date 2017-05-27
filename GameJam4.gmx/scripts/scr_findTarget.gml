@@ -1,5 +1,5 @@
 ///scr_findTarget()
-var ds, tar;
+var ds, tar, dist;
 ds = ds_priority_create();
 ds_priority_add(ds,noone,100000);
 with(o_shipParent) {
@@ -7,7 +7,7 @@ with(o_shipParent) {
 }
 tar = ds_priority_find_min(ds);
 ds_priority_destroy(ds);
-
-if tar != noone and point_distance(x,y,tar.x,tar.y) < viewRange {
+dist = point_distance(x,y,tar.x,tar.y);
+if tar != noone and dist < viewRange and dist > viewRange*.25  {
     return tar
 } else return noone;
