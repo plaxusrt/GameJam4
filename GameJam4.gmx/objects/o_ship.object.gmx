@@ -69,18 +69,29 @@ szVel=0;
           <argument>
             <kind>1</kind>
             <string>
-var ch=choose(0,1);
+var ch=irandom(3);
 model=d3d_model_create();
 
-if ch=0
-{
-d3d_model_load(model,"mod_fighter1.d3d");
-tex=background_get_texture(tex_fighter);
-}
-else
-{
-d3d_model_load(model,"mod_bomber.d3d");
-tex=background_get_texture(tex_bomber);
+switch(ch) {
+    case 0: //Fighter1
+        d3d_model_load(model,"mod_fighter1.d3d");
+        tex=background_get_texture(tex_fighter1);
+    break;
+    
+    case 1: //Fighter2
+        d3d_model_load(model,"mod_fighter2.d3d");
+        tex=background_get_texture(tex_fighter2);
+    break;
+    
+    case 2: //Bomber
+        d3d_model_load(model,"mod_bomber.d3d");
+        tex=background_get_texture(tex_bomber);
+    break;
+    
+    case 3: //Missleship
+        d3d_model_load(model,"mod_missleship.d3d");
+        tex=background_get_texture(tex_missleship);
+    break;
 }
 </string>
           </argument>

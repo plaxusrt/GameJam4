@@ -1,3 +1,3 @@
-x+=vx*spd;
-y+=vy*spd;
-z+=vz*spd;
+x+=vx*vel;
+y+=vy*vel;
+z+=vz*vel;

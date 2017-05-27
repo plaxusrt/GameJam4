@@ -48,8 +48,8 @@ mouse_lock=0;
 team = Player;
 
 model = d3d_model_create();
-d3d_model_load(model,"mod_bomber.d3d");
-tex = background_get_texture(tex_bomber);
+d3d_model_load(model,"mod_fighter1.d3d");
+tex=background_get_texture(tex_fighter1);
 
 d3d_set_projection_ext(x,y,z,x,y,z,0,0,1,70,aspect,1,16000);
 

@@ -10,5 +10,6 @@ switch(argument0) {
         shield=5;
         maxshield=shield;
         range = 1024;
+        vel=8; //Bullect velocity
     break;
 }

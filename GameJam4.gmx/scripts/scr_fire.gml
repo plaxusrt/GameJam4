@@ -7,6 +7,8 @@
     inst.zdir=vzdir;
     inst.z=z;
     inst.team = team;
+    inst.vel = vel;
+    inst.alarm[0] = range/vel;
     
     var q=lengthdir_x(1,vzdir-(fire_bloom*.5)+random(fire_bloom));
     inst.vx=lengthdir_x(q,vdir-(fire_bloom*.5)+random(fire_bloom));

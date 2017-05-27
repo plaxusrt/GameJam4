@@ -4,7 +4,6 @@ vy=0;
 vz=0;
 dir=0;
 zdir=0;
-spd=8;
 
 model=d3d_model_create();
 d3d_model_block(model,-2,-.5,-.5,2,.5,.5,1,1);
