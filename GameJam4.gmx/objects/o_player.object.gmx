@@ -35,7 +35,7 @@ z=0;
 friction = 0.7;
 aspect = view_wport/view_hport;
 
-shipStats(1);
+shipStats(3); //Bomber
 
 model_crosshair = d3d_model_create();
 d3d_model_wall(model_crosshair,4,-4,-4,4,4,4,1,1);

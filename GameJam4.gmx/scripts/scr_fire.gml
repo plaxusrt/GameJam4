@@ -1,6 +1,6 @@
     if can_fire<0 and energy>1{
     can_fire=fire_rate;
-    energy--;
+    energy-=energyconsume;
     
     var inst=instance_create(x,y,o_bullet);
     inst.dir=vdir;

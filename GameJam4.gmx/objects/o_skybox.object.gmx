@@ -67,10 +67,10 @@ d3d_set_hidden(false);
 //d3d_set_zwriteenable(0)
 d3d_model_draw(my_mod,o_player.x,o_player.y,o_player.z,tex);
 
-scroll+=0.0002
+scroll+=0.0002;
 shader_set(shader_planet_scroll);
 shader_set_uniform_f(unif,scroll)
-d3d_model_draw(my_mod2,o_player.x-11-o_player.xVect*24,o_player.y-12-o_player.yVect*24,o_player.z-1-o_player.zVect*24,texp);
+d3d_model_draw(my_mod2,o_player.x-11-o_player.xVect*24 - o_player.zVect*6*dcos(o_player.dir),o_player.y-12-o_player.yVect*24 - o_player.zVect*6*dsin(o_player.dir),o_player.z-1+6*(1-abs(o_player.zVect))-24*o_player.zVect,texp);
 shader_reset();
 
 //d3d_set_zwriteenable(1)

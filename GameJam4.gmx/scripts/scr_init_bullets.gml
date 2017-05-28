@@ -1,3 +1,4 @@
+/*Now in ship stats
 can_fire=0;
 fire_rate=5;
 fire_bloom=4;
