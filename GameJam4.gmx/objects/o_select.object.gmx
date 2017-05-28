@@ -3,7 +3,7 @@
   <spriteName>s_ship</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,6 +33,10 @@ image_xscale = 1.5;
 image_yscale = 1.5;
 
 image_speed = 0;
+
+target = noone;
+
+tim=0;
 </string>
           </argument>
         </arguments>
@@ -55,12 +59,90 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x=node.x+lengthdir_x(28,dir);
+            <string>if !instance_exists(target) {
+x=node.x+lengthdir_x(28,dir);
 y=node.y+lengthdir_y(28,dir);
 
 image_angle=90+dir;
 
 dir+=1;
+image_alpha=1;
+} else {
+    //dir = lerp(dir, point_direction(x,y,target.x,target.y),0.05);
+    
+    dir=point_direction(x,y,target.x,target.y);
+    
+    image_angle = dir;
+    image_alpha = (image_alpha + .1);
+    tim+=0.15;
+    image_alpha = abs(sin(tim));
+    x+=lengthdir_x(1,dir);
+    y+=lengthdir_y(1,dir);
+    if point_distance(x,y,target.x,target.y) &lt; 16 {
+        //Reset
+        node.p_highlight=false;
+        target.confirm=false;
+        target.highlight=false;
+        target.p_highlight=false;
+        node = target;
+        target = noone;
+        
+        dir+=180;
+        
+        if node.team == Player {
+            show_message("Player Territory");
+        } else if node.team == -1 {
+            show_message("Neutral Territory, We will capture it");
+            node.team = Player;
+            var i = 0;
+            node.image_index=1;
+            /*repeat(node.node_i) {
+                node.node_ind[i] = node_getNodeIND(node, node.node_id[i]);
+                with(node.node_id[i]) {
+                    var j=0;
+                    repeat(node_i) {
+                        node_ind[j] = node_getNodeIND(id, node_id[j]);
+                        j++;
+                    }
+                }
+                i++;
+            }*/
+            node_reset_path(node);
+        } else if node.team == Enemy {
+            show_message("Enemy Territory, We must engage");
+            room_goto(room_play);
+            /*view_wport=1280;
+            view_hport=720;
+            window_set_size(view_wport,view_hport);
+            surface_resize(application_surface,view_wport,view_hport);
+            window_center();*/
+        }
+        
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
 </string>
           </argument>
         </arguments>
@@ -83,12 +165,12 @@ dir+=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-with(node) {
+            <string>with(node) {
     shader_set(shdr_outline);
     shader_set_uniform_f(o_nodeMaster.pixelSize,o_nodeMaster.px_s);
     shader_set_uniform_f(o_nodeMaster.outlineColour,1,1,1);
     draw_self();
+    //draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
     shader_reset();
 }
 </string>

@@ -3,7 +3,7 @@
   <spriteName>s_node</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,6 +32,12 @@ pixelSize = shader_get_uniform(shdr_outline, "pixelSize");
 outlineColour = shader_get_uniform(shdr_outline, "outlineColour");
 
 px_s = 1/36;
+
+txt_stage[0] = "Select a neighbouring star";
+txt_stage[1] = "Press space to confirm";
+txt_i=0;
+
+global.gameResult=-1; //-1 Not a match, 0 Lost, 1 Win
 </string>
           </argument>
         </arguments>
@@ -55,11 +61,22 @@ px_s = 1/36;
           <argument>
             <kind>1</kind>
             <string>with(o_zone) {
+    var i=0;
     with(o_node) {
         if point_distance(x,y,other.x,other.y) &lt; 224 {
             team = other.team;
             image_index = team+1;
         }
+        s_ind=i++;
+    }
+}
+
+if global.nodes[? 2] != undefined {//Has had a game before
+    with(o_node) {
+        team = global.nodes[? s_ind];
+    }
+    with(o_select) {
+        node = global.sel_tar;
     }
 }
 node_linkAll();
@@ -86,17 +103,36 @@ node_linkAll();
           <argument>
             <kind>1</kind>
             <string>with(o_node){
+    draw_set_colour(c_white);
     var i = 0;
     repeat(node_i) {
         if node_draw[i] {
+        if p_highlight and i == p_i {
+        shader_set(shdr_outline);
+        shader_set_uniform_f(other.pixelSize,other.px_s);
+        shader_set_uniform_f(other.outlineColour,1,1,1);
+        draw_sprite_ext(s_path,node_ind[i],x,y,node_dis[i],1,node_dir[i],c_white,1);
+        shader_reset();
+        }
         draw_sprite_ext(s_path,node_ind[i],x,y,node_dis[i],1,node_dir[i],c_white,1);
         }
         i++;
     }
-    
-    draw_set_colour(c_white);
     //draw_text(x,y,node_i);
 }
+//Tutorial - Text not showing for some reason
+/*
+var _w = string_width(txt_stage[txt_i]), _h = string_height(txt_stage[txt_i]);
+draw_set_colour(c_yellow);
+draw_set_alpha(0.2);
+draw_rectangle(room_width*.5-_w*.5,room_height-_h,room_width*.5+_w*.5,room_height,false);
+draw_set_alpha(1);
+draw_set_halign(fa_middle);
+draw_set_valign(fa_bottom);
+draw_set_colour(c_white);
+draw_text(room_width*5,room_height,txt_stage[txt_i]);
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

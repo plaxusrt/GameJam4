@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="16" name="datafiles">
+  <datafiles number="17" name="datafiles">
     <datafile>
       <name>P3DC.dll</name>
       <exists>-1</exists>
@@ -16,7 +16,7 @@
       <store>0</store>
       <ConfigOptions>
         <Config name="Default">
-          <CopyToMask>123146358329582</CopyToMask>
+          <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
       <filename>P3DC.dll</filename>
@@ -146,6 +146,7 @@
     <sound>sound\snd_target_alarm</sound>
     <sound>sound\snd_fire1</sound>
     <sound>sound\snd_fire1_3d</sound>
+    <sound>sound\snd_engine</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_path</sprite>
@@ -255,6 +256,8 @@
         <script>scripts\node_linkAll.gml</script>
         <script>scripts\node_getNodeIND.gml</script>
       </scripts>
+      <script>scripts\node_reset_path.gml</script>
+      <script>scripts\node_get_connection.gml</script>
       <script>scripts\node_check_connection.gml</script>
       <script>scripts\node_check_drawConnection.gml</script>
     </scripts>
@@ -282,11 +285,12 @@
       <object>objects\o_nodeMaster</object>
       <object>objects\o_select</object>
       <object>objects\o_zone</object>
+      <object>objects\o_nodeSave</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_play</room>
     <room>rooms\room_conquest</room>
+    <room>rooms\room_play</room>
   </rooms>
   <constants number="2">
     <constant name="Player">0</constant>

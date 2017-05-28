@@ -28,12 +28,12 @@ void main()
 {
     float alpha = 0.0;
     
-    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( pixelSize, 0.0 ) ).a;
-    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( -pixelSize, 0.0 ) ).a;
-    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( 0.0, pixelSize ) ).a;
-    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( 0.0, -pixelSize ) ).a;
+    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( pixelSize*2.0, 0.0 ) ).a;
+    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( -pixelSize*2.0, 0.0 ) ).a;
+    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( 0.0, pixelSize*2.0 ) ).a;
+    alpha+=texture2D( gm_BaseTexture, v_vTexcoord + vec2( 0.0, -pixelSize*2.0 ) ).a;
     
-    alpha /= 4.0;
+    //alpha /= 4.0;
     
     gl_FragColor = vec4(outlineColour, alpha);
 }

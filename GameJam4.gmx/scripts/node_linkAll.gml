@@ -9,7 +9,7 @@ for(var i=0; i < instance_number(o_node); i++) {
                 //Still in distance, so add to node.
                 node_id[node_i] = inst.id;
                 node_draw[node_i] = false;
-                if ((!collision_line(x,y,x+lengthdir_x(dis,dir),y+lengthdir_y(dis,dir),o_node,true,true) and !collision_line(x,y,x+lengthdir_x(dis,dir),y+lengthdir_y(dis,dir),o_tmp_connect,true,true)) or dis <= 48) and !node_check_drawConnection(id,inst) {
+                if /*((!collision_line(x,y,x+lengthdir_x(dis,dir),y+lengthdir_y(dis,dir),o_node,true,true) and !collision_line(x,y,x+lengthdir_x(dis,dir),y+lengthdir_y(dis,dir),o_tmp_connect,true,true)) or dis <= 48) and */!node_check_drawConnection(id,inst.id) {
                     node_draw[node_i] = true;
                     node_dis[node_i] = point_distance(x,y,inst.x,inst.y) / sprite_get_width(s_path);
                     node_dir[node_i] = point_direction(x,y,inst.x,inst.y);
