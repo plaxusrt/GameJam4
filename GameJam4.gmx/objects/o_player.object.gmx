@@ -131,6 +131,10 @@ spd=clamp(spd+(keyboard_check(ord("W"))-keyboard_check(ord("S")))*.1,0,maxspd);
 //debugging
 dir+=(keyboard_check(vk_right)-keyboard_check(vk_left))*.1;
 zdir+=(keyboard_check(vk_up)-keyboard_check(vk_down))*.1;
+
+if keyboard_check_pressed(vk_control) {
+weap_sel=!weap_sel;
+}
 </string>
           </argument>
         </arguments>
