@@ -12,6 +12,7 @@ if can_fire<0 and energy>energyconsume[weap_sel]{
         inst.alarm[0] = range[weap_sel]/vel[weap_sel];
         inst.xscale=xscale[weap_sel];
         inst.yscale=yscale[weap_sel];
+        inst.type = weap_sel; //Whether it's a shield or hull weapon
         
         var q=lengthdir_x(1,vzdir-(fire_bloom[weap_sel]*.5)+random(fire_bloom[weap_sel]));
         inst.vx= lengthdir_x(q,vdir-(fire_bloom[weap_sel]*.5)+random(fire_bloom[weap_sel]));
