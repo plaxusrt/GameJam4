@@ -27,10 +27,10 @@
             <kind>1</kind>
             <string>my_mod1=d3d_model_create();
 my_mod2=d3d_model_create();
-d3d_model_load(my_mod1,"mod_mship_p1.d3d")
-d3d_model_load(my_mod2,"mod_mship_p2.d3d")
-tex=background_get_texture(tex_mship_yellow)
-texl=background_get_texture(tex_mship_lights)
+d3d_model_load(my_mod1,"mod_mship_p1.d3d");
+d3d_model_load(my_mod2,"mod_mship_p2.d3d");
+tex=background_get_texture(tex_mship_yellow);
+texl=background_get_texture(tex_mship_lights);
 team = choose(0,1);
 z=0;
 state=state_mwander;

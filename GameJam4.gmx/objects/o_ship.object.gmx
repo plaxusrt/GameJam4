@@ -68,9 +68,9 @@ szVel=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-var ch=irandom(3);
+            <string>ch=irandom(3);
 model=d3d_model_create();
+//c_model=p3dc_begin_model();
 
 switch(ch) {
     case 0: //Fighter1
@@ -93,6 +93,7 @@ switch(ch) {
         tex=background_get_texture(tex_missleship);
     break;
 }
+//show_message(p3dc_end_model());
 </string>
           </argument>
         </arguments>

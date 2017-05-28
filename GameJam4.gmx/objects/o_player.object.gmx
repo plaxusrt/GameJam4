@@ -231,11 +231,12 @@ d3d_set_projection( x-xVect*24/*-6*zVect*xVect*///,
 //                    y-yVect*24+yVect/*-6*zVect*yVect*/,
 //                   z+6*(1-abs(zVect))-24*zVect+zVect,0,0,1);
 
-d3d_set_projection( x-xVect*24,
-                    y-yVect*24,
+d3d_set_projection( x-xVect*24 - zVect*6*dcos(-dir),
+                    y-yVect*24 - zVect*6*dsin(-dir),
                     z+6*(1-abs(zVect))-24*zVect,
-                    x-xVect*24+xVect,
-                    y-yVect*24+yVect,
+                    
+                    x-xVect*24+xVect - zVect*6*dcos(-dir),
+                    y-yVect*24+yVect - zVect*6*dsin(-dir),
                     z+6*(1-abs(zVect))-24*zVect+zVect,0,0,1);
 </string>
           </argument>

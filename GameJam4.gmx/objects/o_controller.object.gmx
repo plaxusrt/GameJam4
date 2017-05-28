@@ -30,11 +30,33 @@ draw_set_color(c_white);
 texture_set_repeat(true);
 show_debug_overlay(true);
 
+//p3dc_init();
 
 d3d_set_lighting(true);
-d3d_light_define_direction(1,.5,.5,.5,c_white)
-d3d_light_enable(1,1)
-d3d_light_define_ambient(c_dkgray)
+d3d_light_define_direction(1,.5,.5,.5,c_white);
+d3d_light_enable(1,1);
+d3d_light_define_ambient(c_dkgray);
+
+/*model[0] = d3d_model_create();
+model[1] = d3d_model_create();
+model[2] = d3d_model_create();
+model[3] = d3d_model_create();
+
+//Fighter1
+        d3d_model_load(model[0],"mod_fighter1.d3d");
+        tex[0]=background_get_texture(tex_fighter1);
+
+//Fighter2
+        d3d_model_load(model[1],"mod_fighter2.d3d");
+        tex[1]=background_get_texture(tex_fighter2);
+
+//Bomber
+        d3d_model_load(model[2],"mod_bomber.d3d");
+        tex[2]=background_get_texture(tex_bomber);
+
+//Missleship
+        d3d_model_load(model[3],"mod_missleship.d3d");
+        tex[3]=background_get_texture(tex_missleship);
 </string>
           </argument>
         </arguments>
