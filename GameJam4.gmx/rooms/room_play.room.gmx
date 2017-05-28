@@ -52,9 +52,9 @@
   </views>
   <instances>
     <instance objName="o_controller" x="0" y="32" name="inst_C44ECC15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_mship" x="128" y="128" name="inst_35370E3E" locked="0" code="team = Enemy;&#xA;var inst;&#xA;repeat(16) {&#xA;inst = instance_create(x,y,o_ship);&#xA;inst.team = Enemy;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_mship" x="128" y="128" name="inst_35370E3E" locked="0" code="team = Enemy;&#xA;tex=background_get_texture(tex_1_mship);&#xA;var inst;&#xA;repeat(16) {&#xA;inst = instance_create(x,y,o_ship);&#xA;inst.team = Enemy;&#xA;inst.tex = background_get_texture(scr_texInd(inst.ch,inst.team));&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_skybox" x="0" y="0" name="inst_31D6FF52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_mship" x="928" y="928" name="inst_FCD42CA4" locked="0" code="team = Player;&#xA;&#xA;x*=1.5;&#xA;y*=1.5;&#xA;&#xA;var inst;&#xA;repeat(15) {&#xA;inst = instance_create(x,y,o_ship);&#xA;inst.team = Player;&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_mship" x="928" y="928" name="inst_FCD42CA4" locked="0" code="team = Player;&#xA;&#xA;x*=1.5;&#xA;y*=1.5;&#xA;&#xA;tex=background_get_texture(tex_0_mship);&#xA;&#xA;var inst;&#xA;repeat(15) {&#xA;inst = instance_create(x,y,o_ship);&#xA;inst.team = Player;&#xA;inst.tex = background_get_texture(scr_texInd(inst.ch,inst.team));&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_player" x="896" y="896" name="inst_A4E5CDD6" locked="0" code="x*=1.5;&#xA;y*=1.5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

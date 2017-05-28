@@ -154,6 +154,7 @@
     <sprite>sprites\s_crosshair</sprite>
     <sprite>sprites\windows</sprite>
     <sprite>sprites\s_spot</sprite>
+    <sprite>sprites\s_ship</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\b_spacefield</background>
@@ -170,6 +171,20 @@
         <background>background\tex_mship_lights</background>
         <background>background\background7</background>
         <background>background\tex_mship_yellow</background>
+        <background>background\tex_0_mship</background>
+        <background>background\tex_1_mship</background>
+      </backgrounds>
+      <backgrounds name="Player">
+        <background>background\tex_0_fighter1</background>
+        <background>background\tex_0_fighter2</background>
+        <background>background\tex_0_bomber</background>
+        <background>background\tex_0_missleship</background>
+      </backgrounds>
+      <backgrounds name="Enemy">
+        <background>background\tex_1_fighter1</background>
+        <background>background\tex_1_fighter2</background>
+        <background>background\tex_1_bomber</background>
+        <background>background\tex_1_missleship</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>
@@ -235,12 +250,19 @@
       <script>scripts\p3dc_clear_model.gml</script>
     </scripts>
     <scripts name="Node Functions">
-      <script>scripts\genNodes.gml</script>
-      <script>scripts\node_checkConnection.gml</script>
+      <scripts name="Node Generation">
+        <script>scripts\genNodes.gml</script>
+        <script>scripts\node_linkAll.gml</script>
+        <script>scripts\node_getNodeIND.gml</script>
+      </scripts>
+      <script>scripts\node_check_connection.gml</script>
+      <script>scripts\node_check_drawConnection.gml</script>
     </scripts>
+    <script>scripts\scr_texInd.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader_planet_scroll.shader</shader>
+    <shader type="GLSLES">shaders\shdr_outline.shader</shader>
   </shaders>
   <objects name="objects">
     <object>objects\o_controller</object>
@@ -258,6 +280,8 @@
       <object>objects\o_arm</object>
       <object>objects\o_node</object>
       <object>objects\o_nodeMaster</object>
+      <object>objects\o_select</object>
+      <object>objects\o_zone</object>
     </objects>
   </objects>
   <rooms name="rooms">

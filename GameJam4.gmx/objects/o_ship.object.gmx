@@ -28,7 +28,7 @@
             <string>team = irandom(1);
 alarm[0] = 1;
 target = noone;
-z=random(room_width);
+z=0;//random(room_width);
 
 state = state_wander;
 
